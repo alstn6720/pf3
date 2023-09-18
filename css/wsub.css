@@ -1,0 +1,46 @@
+header .wgnb {
+  
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  background-color: rgba(0,0,0,0.8);
+  padding: 15px 0;
+  display: none;
+}
+header .wgnb div.center{
+  
+  width: 586px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  transform: translateX(6px);
+}
+header .wgnb div div.wsub {
+  
+  width: 92.5px;
+  border-right: 1px solid #333;
+}
+header .wgnb div div.wsub:not(:last-child){
+  border-right: 1px solid #333;
+}
+header .wgnb div div.wsub:nth-child(3){
+  
+  width: 123.8px;
+}
+header .wgnb div div.wsub h2 {
+  
+  display: block;
+}
+header .wgnb div div.wsub ul {
+  
+}
+header .wgnb div div.wsub ul li {
+  
+}
+header .wgnb div div.wsub ul li a {
+  color:#ccc;
+  padding: 0 15px;
+  line-height:1.7;
+  display: block;
+  font-size: 15px;
+}
