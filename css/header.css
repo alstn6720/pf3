@@ -110,8 +110,7 @@ header .wrap nav ul.gnb li a {
 }
 header .wrap nav ul.gnb li a:hover{
   
-  background-color: #ccc;
-  border-top: 2px solid #333;
+  color: #5db9e2;
 }
 header .wrap nav>div:nth-of-type(1) {
   gap: 20px;

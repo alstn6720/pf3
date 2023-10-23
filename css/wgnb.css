@@ -9,13 +9,11 @@ div.wgnb {
 
 div.wgnb div.center {
   
-  width: 586px;
+  width: 785px;
   margin: 0 auto;
-  justify-content: space-evenly;
-  transform: translateX(6px);
 }
 div.wgnb div.center div.wsub {
-  width: 92.5px;
+  width: 101.5px;
   padding: 15px 0;
 }
 div.wgnb div.center div.wsub:not(:last-child){
