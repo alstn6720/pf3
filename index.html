@@ -48,7 +48,61 @@
                 AOS.init();
             })
           </script>
-    
+    <!-- 헤더스크롤이벤트 -->
+    <script>
+        $(document).ready(function(){
+
+            $("footer .btop").hide();
+
+            var ws=$(window).scrollTop(); // 윈도우창의 스크롤탑값을 가져와서 변수 ws에 저장하시오
+            var headerY=$("header").offset().top; // 헤더의 탑값을 가져와서 변수headerY에 저장하시오 
+            var headerH=$("header").height(); // 헤더의 높이값을 가져와서 변수headerH에 저장하시오
+            var businessY=$("#business").offset().top-headerY-headerH;
+            var officeY=$("#office .wrap").offset().top + 50 - $(window).height();
+            // 비즈니스의 탑값에서 변수header값과 변수headerH값을 빼서 변수 businessY에 넣어라
+
+            console.log(ws); // 콘솔창에 변수ws값을 표시해라
+
+            $(window).scroll(function(){ // 윈도우창을 스크롤하면 실행하시오
+
+            // -1 스크롤시 대메뉴 보이게 안보이게    
+                var scrollup = $(window).scrollTop() >= ws; // 윈도우창의 스크롤 탑값이 변수ws값보다 크거나 같다(비교) >> 비교하면 결과값이  true(참) 또는 false(거짓)  
+        
+                ws=$(window).scrollTop(); // 윈도우창의 스크롤 탑값을 가져와서 변수 ws에 저장하시오
+            
+                if(ws>headerY){ // 변수 ws값이 변수 headerY보다 크다면
+                    $("header").addClass("fixed");
+                }
+                if(ws>businessY){ //변수 ws값이 변수 >businessY보다 크다면
+                    $("header").addClass("up");// 상단메뉴가 위로 사라짐
+                }
+                if(ws<businessY){ //
+                    $("header").removeClass("up")
+                }
+                if(ws<headerY){ // 
+                    $("header").removeClass("fixed");
+                }
+                if(ws>businessY && scrollup){ //조건이 참이면 && 그리고 and
+                    $("header").addClass("up");
+                }else{
+                    $("header").removeClass("up");
+                }
+            // -2 위로가기 화살표 보이게 안보이게  
+                if(ws>businessY && !scrollup){//!scrollup은 scrollup이 아닌, !는 not(부정) 
+                    $("footer .btop").fadeIn();
+                }else if(ws>officeY){
+                    $("footer .btop").fadeIn();
+                }else{
+                    $("footer .btop").fadeOut();
+                }
+                if(ws>(officeY+234.8)){
+                    $("footer .btop").addClass("absolute");
+                }else{
+                    $("footer .btop").removeClass("absolute");
+                }
+            });
+        });
+    </script>
 </head>
 <body>  
     <!-- 상단영역 -->
